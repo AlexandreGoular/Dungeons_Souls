@@ -1,0 +1,53 @@
+import clienteFetch from '../axios/config';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+export function Cadastro() {
+    const navigate = useNavigate();
+
+    const [nome, setNome] = useState('');
+    const [idade, setIdade] = useState('');
+    const [cidade, setCidade] = useState('');
+
+    const createCliente = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        const post = { nome, idade, cidade };
+
+        try {
+            const response = await clienteFetch.post("/cadastro", post);
+            console.log('Cliente criado com sucesso', response.data);
+            navigate('/'); // Redirecionar após sucesso
+        } catch (error) {
+            console.error('Erro ao criar cliente', error);
+        }
+    };
+
+    return (
+        <>
+            <h1>Realizar Cadastro</h1>
+
+            <form onSubmit={createCliente}>
+                <input 
+                    type="text" 
+                    placeholder="Digite seu Nome" 
+                    value={nome}
+                    onChange={(e) => setNome(e.target.value)} 
+                />
+                <input 
+                    type="number" 
+                    placeholder="Digite sua Idade" 
+                    value={idade}
+                    onChange={(e) => setIdade(e.target.value)} 
+                />
+                <input 
+                    type="text" 
+                    placeholder="Digite sua Cidade" 
+                    value={cidade}
+                    onChange={(e) => setCidade(e.target.value)} 
+                />
+                <input type="submit" value="Cadastrar Cliente" />
+            </form>
+        </>
+    );
+}
