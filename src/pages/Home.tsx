@@ -1,6 +1,8 @@
+import { Article } from "../components/Article";
 import { Aside } from "../components/Aside";
 import { Footer } from "../components/Footer";
 import { Navbar } from "../components/Navbar";
+import { Section } from "../components/Section";
 
 export function Home() {
 
@@ -8,8 +10,10 @@ export function Home() {
 
         <>
             <Navbar />
-            <div className="container">
+            <div className="main">
                 <Aside />
+                <Article />
+                <Section />
                 <Footer />
             </div>
             
