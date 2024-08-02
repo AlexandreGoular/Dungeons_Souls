@@ -7,10 +7,12 @@ export function Home() {
     return (
 
         <>
-        
             <Navbar />
-            <Aside />
-            <Footer />
+            <div className="container">
+                <Aside />
+                <Footer />
+            </div>
+            
         </>
     )
 }

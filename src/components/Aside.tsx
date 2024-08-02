@@ -1,4 +1,5 @@
-import '../styles/App.scss'
+import frieren from '../assets/frieren.jpg'
+import '../styles/Asside.scss' 
 
 export function Aside() {
     return (
@@ -6,7 +7,7 @@ export function Aside() {
         
             <aside>
 
-                <h1>Aside</h1>
+                <img src={frieren} alt='frieren' />
 
             </aside>
         
