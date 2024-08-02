@@ -1,3 +1,5 @@
+import '../styles/App.scss'
+
 export function Aside() {
     return (
         <>
