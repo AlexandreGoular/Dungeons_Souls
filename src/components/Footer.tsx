@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import postFetch from '../axios/config';
 import '../styles/Footer.scss'
+import Swal from 'sweetalert2'
+
 
 export function Footer() {
+
+
+
     const [emailPessoa, setEmailPessoa] = useState('');
     const [avaliacao, setAvaliacao] = useState('');
 
@@ -14,17 +19,32 @@ export function Footer() {
         try {
             const response = await postFetch.post('/home', post);
             console.log('Avaliacao Criada', response.data);
-            window.location.reload();
+            setTimeout(() => {
+                window.location.reload();
+            }, 5000)
         } catch (error) {
             console.log(error);
         }
     };
 
+    function alerta() {
+        Swal.fire(
+            'Formulario Enviado',
+            'Obrigado pelo feedback',
+            'success'
+        )
+    }
+
+
     return (
         <footer>
+
+            <h1>Avaliacao</h1>
+
+
             <form onSubmit={createAvaliacao}>
                 <input
-                    className='campos'
+                    className='email'
                     type="text"
                     placeholder="Digite seu email"
                     value={emailPessoa}
@@ -37,7 +57,7 @@ export function Footer() {
                     value={avaliacao}
                     onChange={(e) => setAvaliacao(e.target.value)}
                 />
-                <input type="submit" value="Enviar Avaliacao" />
+                <input onClick={alerta} className='btn' type="submit" value="Enviar Avaliacao" />
             </form>
         </footer>
     );
