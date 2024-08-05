@@ -39,7 +39,7 @@ export function Footer() {
     return (
         <footer>
 
-            <h1>Avaliacao</h1>
+            <h1 id='avaliacao'>Avaliacao</h1>
 
 
             <form onSubmit={createAvaliacao}>

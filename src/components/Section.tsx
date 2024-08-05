@@ -12,7 +12,7 @@ export function Section() {
         
             <section>
 
-                <h4>Tecnologias</h4>
+                <h4 id='sobre'>Tecnologias</h4>
 
                 <div className="tecnologias">
                     <img src={iconReact} alt="React icone" />
