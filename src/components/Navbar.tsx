@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import '../styles/Navbar.scss'
 
 export function Navbar() {
@@ -6,11 +7,12 @@ export function Navbar() {
         
         <header>
 
-            <h1 id='home'>Dungeons Souls</h1>
+            <Link id='home' to="/"><h1>Dungeons Souls</h1></Link>
 
-            <a  href="#home">Home</a>
+
             <a href="#sobre">Sobre</a>
             <a href="#avaliacao">Avaliacao</a>
+            <Link to="/admin">Admin</Link>
 
 
         </header>
