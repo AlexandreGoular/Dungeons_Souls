@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 export function Login() {
     const [usuario, setUsuario] = useState("");
     const [senha, setSenha] = useState("");
-    const navigate = useNavigate(); // Hook para navegação no React Router
+    const navigate = useNavigate(); 
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
@@ -12,7 +12,7 @@ export function Login() {
         if (usuario !== "dg123" || senha !== "1234") {
             alert("Erro");
         } else {
-            navigate("/servidor"); // Redireciona corretamente dentro do React Router
+            navigate("/servidor"); 
         }
     };
 
