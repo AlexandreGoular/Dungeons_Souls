@@ -12,7 +12,6 @@ export function Home() {
                 <Aside />
                 <Section />
                 <Footer />
-                <h1>B</h1>
             </div>
             
         </>
